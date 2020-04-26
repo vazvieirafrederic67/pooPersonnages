@@ -17,7 +17,6 @@ class Joueur
     public $hp;
     private $mp;
     public $ap;
-
     public $armor;
 
 

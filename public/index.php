@@ -5,7 +5,7 @@ use App\LibsLoader;
 use App\Models\Armor;
 use App\Models\Joueur;
 use App\Models\Stats;
-
+use App\Models\Combat;
 
 
 $loader = require '../vendor/autoload.php';
@@ -75,15 +75,26 @@ $playerOrc->calculateHps();
 $playerOrc->calculateMps();
 $playerOrc->calculateAps();
 
-$damagesOrc = $playerOrc->calculateDamagesGiven();
 
+/*
+$damagesOrc = $playerOrc->calculateDamagesGiven();
 print('pv du joueur avant de prendre une tarte'. $player->hp);
+
 $player->takeDamages($damagesOrc);
 print('pv du joueur après avoir mangé une tarte'. $player->hp);
-
+*/
 
 
 // faire un algo simuler un combat entre le joueur et l'orc dés qu'un des joueur a 0 pvp, il a perdu.
+
+$combatDeTitans = new Combat();
+$combatDeTitans->combatJoueurs($player, $playerOrc);
+
+
+
+
+
+
 
 $tools->prettyVarDump($player);
 $tools->prettyVarDump($playerOrc);
